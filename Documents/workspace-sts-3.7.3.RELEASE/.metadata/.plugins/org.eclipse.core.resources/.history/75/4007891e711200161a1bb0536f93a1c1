@@ -1,0 +1,15 @@
+package hello;
+
+import java.util.List;
+
+import org.joda.time.DateTime;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface RecordRepository extends MongoRepository<Record, String> {
+
+	
+    //public Record findByfileName(String cameraid, DateTime dateTime, String fileName);
+  //  public List<Record> findByAllRecord(String cameraid);
+
+}
+

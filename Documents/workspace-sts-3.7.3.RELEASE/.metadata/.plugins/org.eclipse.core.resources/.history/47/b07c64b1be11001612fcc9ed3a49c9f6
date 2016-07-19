@@ -1,0 +1,22 @@
+package hello;
+
+//import java.util.Date;
+
+public class Greeting {
+
+    private final long id;
+    private final long date;
+
+    public Greeting(long id, long date) {
+        this.id = id;
+        this.date = date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public long getdate() {
+        return date;
+    }
+}

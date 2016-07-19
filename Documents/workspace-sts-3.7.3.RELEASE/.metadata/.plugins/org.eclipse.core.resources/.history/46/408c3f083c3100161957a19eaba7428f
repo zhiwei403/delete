@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='camListApp'>
+<head>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="hello.js"></script>
+  <title>Image </title>
+</head>
+
+<body>
+<h3>Search by cameraid:</h3><br>
+ <select ng-model="searchBox" style="width:50%">
+  <option value="000000006f4280af">000000006f4280af</option>
+  <option value="002">002</option>
+  <option value="0011">0011</option>
+</select>
+
+
+    <div ng-controller="Hello">
+    <br>
+     <table style="width:100%">
+        <thead>
+          <tr>
+         
+            <th>CamID</th>
+            <th>Timestamp</th>
+            <th>Filename</th>
+            <th>View image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="record in records | filter:searchBox">
+         
+            <td>{{record.cameraid}}</td>
+            <td>{{record.timestamp}}</td>
+            <td>{{record.filename}}</td>
+            <td><a href="" onclick="javascript:event.target.port=9000">Look at another port</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

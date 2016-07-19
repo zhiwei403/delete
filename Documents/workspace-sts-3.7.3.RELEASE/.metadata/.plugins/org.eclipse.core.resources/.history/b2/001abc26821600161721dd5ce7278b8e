@@ -1,0 +1,12 @@
+package hello;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface RecordRepository extends MongoRepository<Record, String> {
+
+   // public Record findByFirstName(String firstName);
+  //  public List<Record> findByLastName(String lastName);
+
+}

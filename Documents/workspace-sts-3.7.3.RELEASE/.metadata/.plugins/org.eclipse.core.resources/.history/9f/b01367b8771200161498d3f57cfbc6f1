@@ -1,0 +1,31 @@
+package hello;
+
+import org.springframework.data.annotation.Id;
+import org.joda.time.DateTime;
+
+public class Record {
+
+    @Id
+    private String cameraid;
+
+    private DateTime dateTime;
+    private String fileName;
+
+    public Record() {}
+
+    public Record(String cameraid, DateTime dateTime,  String fileName) {
+    	this.cameraid = cameraid;
+        this.dateTime = dateTime;
+        this.fileName = fileName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Record[cameraid='%s', dateTime='%c', fileName='%s']",
+                cameraid, dateTime, fileName);
+    }
+
+}
+
+

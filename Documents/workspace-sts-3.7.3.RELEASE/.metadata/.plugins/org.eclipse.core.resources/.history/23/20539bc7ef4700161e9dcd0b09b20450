@@ -1,0 +1,5 @@
+
+<ul>
+each User in users
+</ul>
+<li>{User.name}</li>

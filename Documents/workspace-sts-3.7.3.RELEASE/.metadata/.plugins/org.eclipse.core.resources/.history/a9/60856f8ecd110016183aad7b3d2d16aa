@@ -1,0 +1,22 @@
+package hello;
+
+import org.joda.time;
+
+public class Greeting {
+
+    private final long id;
+    private final DateTime date;
+
+    public Greeting(long id, String date) {
+        this.id = id;
+        this.date = date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getdate() {
+        return date;
+    }
+}

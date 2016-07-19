@@ -1,0 +1,42 @@
+package hello;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+@XmlRootElement
+public class Record {
+    private String cameraid;
+    private DateTime DateTime;
+    private String FileName;
+
+    public Record(String cameraid, DateTime DateTime, String fileName) {
+        this.cameraid = cameraid;
+        this.DateTime = DateTime;
+        this.FileName = fileName;
+    }
+
+
+	public String getId() {
+        return cameraid;
+    }
+
+    public DateTime getDt() {
+        return DateTime;
+    }
+    public String getFn() {
+        return FileName;
+    }
+    public void setId(String cameraid) {
+    	this.cameraid = cameraid;
+    }
+    public void setDt(DateTime DateTime) {
+    	this.DateTime = DateTime;
+    }
+    public void setFn(String fileName) {
+    	this.FileName = fileName;
+    }
+}

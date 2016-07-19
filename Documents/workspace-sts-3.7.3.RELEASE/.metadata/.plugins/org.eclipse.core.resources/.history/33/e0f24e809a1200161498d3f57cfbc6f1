@@ -1,0 +1,42 @@
+package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Date;
+
+import org.joda.time.DateTime;
+@SpringBootApplication
+public class Application implements CommandLineRunner {
+
+	@Autowired
+	private RecordRepository repository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		//String str =String format("date")
+		Date date = new Date();
+        DateTime currentDate = new DateTime(date);
+		repository.deleteAll();
+
+		// save a couple of customers
+		repository.save(new Record("Bedok01", currentDate, "fileName1"));
+		repository.save(new Record("Tampine02", null, "fileName2"));
+
+		// fetch all customers
+		System.out.println("Record found with findAll():");
+		System.out.println("-------------------------------");
+		for (Record record : repository.findAll()) {
+			System.out.println(record);
+		}
+		System.out.println();
+
+	}
+}
+

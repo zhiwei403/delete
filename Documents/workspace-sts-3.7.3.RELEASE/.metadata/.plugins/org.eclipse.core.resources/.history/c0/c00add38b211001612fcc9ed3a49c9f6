@@ -1,0 +1,40 @@
+package hello;
+
+import java.util.Date;
+
+
+public class Greeting {
+
+    private String id;
+    private Date date;
+
+    
+    public Greeting () {
+    }
+    
+    }
+    public Greeting(String id, Date date) {
+        setId(id);
+        setDate(date);
+    }
+
+    private void setDate(Date date) {
+		// TODO Auto-generated method stub
+		this.date = date;
+	}
+    
+    public Date getdate() {
+        return date;
+    }
+
+	private void setId(String id) {
+		// TODO Auto-generated method stub
+		this.id = id;
+	}
+
+	public String getId() {
+        return id;
+    }
+
+  
+}

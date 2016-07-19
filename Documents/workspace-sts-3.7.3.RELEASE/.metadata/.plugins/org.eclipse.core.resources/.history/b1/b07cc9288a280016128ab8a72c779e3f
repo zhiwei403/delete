@@ -1,0 +1,65 @@
+package hello;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+@RequestMapping("/camera")
+public class RecordController {
+	@Autowired
+	private RecordRepository rep;
+   // private static final String template = "Hello, %s!";
+   // private final AtomicLong counter = new AtomicLong();
+    // private final String D = "2016-05-09T17:31:01.000Z";
+   	
+   	
+    //@CrossOrigin(origins = "http://localhost:9000")
+    @RequestMapping(value="store")
+    public  String  camera (@RequestParam(required=true, value="ts") String timestamp,
+    @RequestParam(value="fn",required=true) String filename,
+    @RequestParam(value="cam",required=true) String cameraid)
+
+    {
+    	try {
+    		Record cam = new Record(timestamp,filename,cameraid);
+         
+    		rep.save(cam);
+            return "OK";
+        }catch(Exception ex){
+        	
+            String errorMessage;
+            errorMessage = ex + " <== error";
+            return ("error: " + ex.getMessage());}
+        }
+    @RequestMapping(value="li", method=RequestMethod.GET)
+    public  List<Record>  getAll() {
+        return rep.findAll();
+    }  
+}/*   Record cam = new Record(counter.incrementAndGet(), cameraid, timestamp,filename);
+       rep.save(cam);
+     return cam; 
+     
+     
+     
+      @RequestMapping(value="li", method=RequestMethod.GET)
+    public @ResponseBody List<Record> getAll() {
+        return rep.findAll();
+    }
+
+    }
+*/
+   /* @RequestMapping("/camera-javaconfig")
+    public @ResponseBody Record greetingWithJavaconfig(@RequestParam(required=false, defaultValue="World") String cameraid,
+    		@RequestParam(required=false, defaultValue=Date) String datetime,
+    	    @RequestParam(required=false, defaultValue="dog") String filename) {
+      //  System.out.println("==== in greeting ====");
+        return new Record(counter.incrementAndGet(), cameraid, datetime,filename);
+    }*/
+
+

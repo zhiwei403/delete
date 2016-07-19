@@ -1,0 +1,10 @@
+
+
+<html>
+
+<body>
+<table border =1>
+<tr " each User in users">            
+         <td>{{User.username}}</td>
+         </tr>
+</table>

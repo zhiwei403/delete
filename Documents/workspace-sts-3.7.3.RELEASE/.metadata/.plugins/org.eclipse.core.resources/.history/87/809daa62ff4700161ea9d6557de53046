@@ -1,0 +1,25 @@
+
+//models are constructors that we define. 
+//They represent documents which can be saved and retrieved from our database.
+ 
+
+
+// grab the things we need
+var mongoose = require("mongoose");
+var passportLocalMongoose = require("passport-local-mongoose");
+
+
+//create a schema
+var UserSchema = new mongoose.Schema({  // Schema define attributes for our documents
+    
+	username: {type: String, require: true},
+    password: {type: String, require: true}
+});
+
+
+//the schema is useless so far
+//we need to create a model using it
+UserSchema.plugin(passportLocalMongoose);
+
+//make this available to our users in our Node applications
+module.exports = mongoose.model("Account", UserSchema);

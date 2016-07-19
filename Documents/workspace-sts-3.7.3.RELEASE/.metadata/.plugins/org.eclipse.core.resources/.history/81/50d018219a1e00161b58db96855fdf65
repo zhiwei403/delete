@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app>
+	<head>
+	<style>
+	table, th, td {
+    border: 1px solid black;
+	}
+	</style>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="hello.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+		
+    <p>{{greeting.id}}</p>
+    <p>{{greeting.cameraid}}</p>
+    <p>{{greeting.timestamp}}</p>
+    <p>{{greeting.filename}}</p>
+  
+		</div>
+	</body>
+</html>

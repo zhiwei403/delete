@@ -1,0 +1,37 @@
+package hello;
+
+import org.joda.time.DateTime;
+
+public class Greeting {
+
+    private String cameraid;
+    private DateTime DateTime;
+    private String FileName;
+
+    public Greeting(String cameraid, DateTime DateTime, String fileName) {
+        this.cameraid = cameraid;
+        this.DateTime = DateTime;
+        this.FileName = fileName;
+    }
+
+
+	public String getId() {
+        return cameraid;
+    }
+
+    public DateTime getDt() {
+        return DateTime;
+    }
+    public String getFn() {
+        return FileName;
+    }
+    public void setId(String cameraid) {
+    	this.cameraid = cameraid;
+    }
+    public void setDt(DateTime DateTime) {
+    	this.DateTime = DateTime;
+    }
+    public void setFn(String fileName) {
+    	this.FileName = fileName;
+    }
+}
